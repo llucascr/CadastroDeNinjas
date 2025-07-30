@@ -1,6 +1,6 @@
 package dev.java10x.CadastroDeNinjas.Ninjas;
 
-import dev.java10x.CadastroDeNinjas.Missoes.Missoes;
+import dev.java10x.CadastroDeNinjas.Missoes.Mission;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -15,18 +15,20 @@ public class Ninja {
 
     private String nome;
 
-    private int idade;
+    private int age;
 
     private String email;
 
-    private List<Missoes> missoes;
+    @ManyToOne // Muitos/Many Ninjas para um/One Missao
+    @JoinColumn(name = "missionId") // FK
+    private Mission mission;
 
     public Ninja() {
     }
 
-    public Ninja(String nome, int idade, String email) {
+    public Ninja(String nome, int age, String email) {
         this.nome = nome;
-        this.idade = idade;
+        this.age = age;
         this.email = email;
     }
 
@@ -42,12 +44,12 @@ public class Ninja {
         this.nome = nome;
     }
 
-    public int getIdade() {
-        return idade;
+    public int getAge() {
+        return age;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getEmail() {

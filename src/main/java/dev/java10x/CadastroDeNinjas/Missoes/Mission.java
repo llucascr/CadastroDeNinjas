@@ -1,10 +1,13 @@
 package dev.java10x.CadastroDeNinjas.Missoes;
 
+import dev.java10x.CadastroDeNinjas.Ninjas.Ninja;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_missoes")
-public class Missoes {
+public class Mission {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,10 +18,13 @@ public class Missoes {
     @Enumerated(value = EnumType.STRING)
     private MissionDifficulty difficulty;
 
-    public Missoes() {
+    @OneToMany(mappedBy = "mission") // Uma/One Missao para muitos/Many ninjas
+    private List<Ninja> ninjas;
+
+    public Mission() {
     }
 
-    public Missoes(Long id, String name, MissionDifficulty difficulty) {
+    public Mission(Long id, String name, MissionDifficulty difficulty) {
         this.id = id;
         this.name = name;
         this.difficulty = difficulty;
