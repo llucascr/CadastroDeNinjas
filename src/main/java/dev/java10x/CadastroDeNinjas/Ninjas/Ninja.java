@@ -25,6 +25,7 @@ public class Ninja {
 
     private int age;
 
+    @Column(unique = true)
     private String email;
 
     @ManyToOne // Muitos/Many Ninjas para um/One Missao
