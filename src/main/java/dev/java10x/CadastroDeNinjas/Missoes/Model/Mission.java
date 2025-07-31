@@ -1,6 +1,7 @@
-package dev.java10x.CadastroDeNinjas.Missoes;
+package dev.java10x.CadastroDeNinjas.Missoes.Model;
 
-import dev.java10x.CadastroDeNinjas.Ninjas.Ninja;
+import dev.java10x.CadastroDeNinjas.Dto.Enum.MissionDifficulty;
+import dev.java10x.CadastroDeNinjas.Ninjas.Model.Ninja;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
