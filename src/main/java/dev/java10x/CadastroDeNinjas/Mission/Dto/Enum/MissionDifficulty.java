@@ -1,4 +1,4 @@
-package dev.java10x.CadastroDeNinjas.Dto.Enum;
+package dev.java10x.CadastroDeNinjas.Mission.Dto.Enum;
 
 public enum MissionDifficulty {
     A,
