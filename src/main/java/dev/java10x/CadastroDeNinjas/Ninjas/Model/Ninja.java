@@ -26,8 +26,10 @@ public class Ninja {
     @Column(unique = true)
     private String email;
 
+    private String rank;
+
     @ManyToOne // Muitos/Many Ninjas para um/One Missao
-    @JoinColumn(name = "missionId") // FK
+    @JoinColumn(name = "mission_id") // FK
     private Mission mission;
 
 }
